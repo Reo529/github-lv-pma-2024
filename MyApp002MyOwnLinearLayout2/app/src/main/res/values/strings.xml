@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">MyApp002MyOwnLinearLayout</string>
+        <string name="btn_send">Uložit</string>
+        <string name="btn_delete">Vymazat</string>
+
+
+</resources>
