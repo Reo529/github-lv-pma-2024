@@ -47,12 +47,12 @@
     </RadioGroup>
 
     <CheckBox
-        android:id="@+id/cbKůže"
+        android:id="@+id/cbKuze"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="lepší kůže"/>
     <CheckBox
-        android:id="@+id/cbKrémnakůži"
+        android:id="@+id/cbKremnakuzi"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="krém na kůži"/>
