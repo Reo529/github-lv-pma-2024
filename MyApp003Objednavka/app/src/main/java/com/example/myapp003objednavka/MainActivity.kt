@@ -48,5 +48,17 @@ class MainActivity : AppCompatActivity() {
 
         }
 
+        //změna obrázků v závislosti na vybraném radioButtonu
+
+        binding.rbSedlo1.setOnClickListener {
+            binding.ivSedlo.setImageResource(R.drawable.sedlo_1)
+                         }
+        binding.rbSedlo2.setOnClickListener {
+            binding.ivSedlo.setImageResource(R.drawable.sedlo_2)
         }
+        binding.rbSedlo3.setOnClickListener {
+            binding.ivSedlo.setImageResource(R.drawable.sedlo_3)
+        }
+
+    }
     }
