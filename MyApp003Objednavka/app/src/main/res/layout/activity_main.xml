@@ -7,13 +7,15 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="20sp"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:background="@color/white">
 
     <TextView
         android:id="@+id/tvNadpis"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Jaké sedlo si chcete objednat?"
+        android:textSize="20dp"
         android:textAlignment="center"
          />
 
@@ -63,12 +65,13 @@
         android:id="@+id/btnObjednavka"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="objednat kolo"/>
+        android:backgroundTint="@color/Colour1"
+        android:text="Objednat sedlo"/>
     <TextView
         android:id="@+id/tvObjednavka"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Souhrn objednávky:"/>
+        android:text="Souhrn objednávky: "/>
     <ImageView
         android:id="@+id/ivSedlo"
         android:layout_width="match_parent"

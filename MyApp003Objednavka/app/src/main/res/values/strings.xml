@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">MyApp003Objednavka</string>
+    <string name= "btn_send">Objednat sedlo</string>
 </resources>
