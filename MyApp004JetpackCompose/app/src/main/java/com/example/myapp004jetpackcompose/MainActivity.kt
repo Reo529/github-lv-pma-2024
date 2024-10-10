@@ -12,6 +12,7 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
+import androidx.compose.material3.CenterAlignedTopAppBar
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.OutlinedTextField
@@ -67,13 +68,14 @@ fun ComposePerson() {
     var age by remember { mutableStateOf("") }
     var place by remember { mutableStateOf("") }
     var resultText by remember { mutableStateOf("") }
-
+    var street by remember { mutableStateOf("") }
+    var number by remember { mutableStateOf("") }
 
 
     Scaffold(
         topBar = {
-            TopAppBar(
-                title = { Text("Moje Aplikace", color = Color.White, textAlign = TextAlign.Center)
+            CenterAlignedTopAppBar(
+                title = { Text("Moje Aplikace", color = Color.White)
                         }, // Nastaví barvu textu na bílou
                 colors = TopAppBarDefaults.centerAlignedTopAppBarColors(
                     containerColor = Color.DarkGray,  // Nastaví pozadí na černé
@@ -115,10 +117,28 @@ fun ComposePerson() {
                 label = { Text("Věk (hodnota menší než 123)") },
                 modifier = Modifier.fillMaxWidth()
             )
+
+            OutlinedTextField(
+                value = number,
+                onValueChange = {number
+                    // Omezíme vstup na číslice a kontrolujeme, že číslo není větší než 150
+                    if (it.all { char -> char.isDigit() } && it.toIntOrNull()?.let { it <= 20 } == true) {
+                        number = it
+                    }
+                },
+                label = { Text("Počet sourozenců (hodnota menší než 20)") },
+                modifier = Modifier.fillMaxWidth()
+            )
             OutlinedTextField(
                 value = place,
                 onValueChange = { place = it },
-                label = { Text("Bydliště") },
+                label = { Text("Město") },
+                modifier = Modifier.fillMaxWidth()
+            )
+            OutlinedTextField(
+                value = street,
+                onValueChange = { name = it },
+                label = { Text("Ulice") },
                 modifier = Modifier.fillMaxWidth()
             )
 
@@ -129,7 +149,7 @@ fun ComposePerson() {
             ) {
                 Button(
                     onClick = {
-                        resultText = "Jmenuji se $name $surname. Je mi $age let a moje bydliště je $place."
+                        resultText = "Jmenuji se $name $surname. Je mi $age let a moje bydliště je $place, má ulice je $street."
                     },
                     modifier = Modifier.weight(1f)
                 ) {
@@ -142,6 +162,8 @@ fun ComposePerson() {
                         surname = ""
                         age = ""
                         place = ""
+                        street = ""
+                        number = ""
                         resultText = ""
                     },
                     modifier = Modifier.weight(1f),
