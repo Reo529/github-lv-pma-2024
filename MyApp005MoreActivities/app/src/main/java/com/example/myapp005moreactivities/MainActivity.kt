@@ -24,7 +24,7 @@ class MainActivity : AppCompatActivity() {
             val intent = Intent(this, SecondActivity::class.java)
             intent.putExtra("NICK_NAME", nickname)
             startActivity(intent)
-       
+
         }
     }
 }
