@@ -122,11 +122,11 @@ fun ComposePerson() {
                 value = number,
                 onValueChange = {number
                     // Omezíme vstup na číslice a kontrolujeme, že číslo není větší než 150
-                    if (it.all { char -> char.isDigit() } && it.toIntOrNull()?.let { it <= 20 } == true) {
+                    if (it.all { char -> char.isDigit() } && it.toIntOrNull()?.let { it <= 200 } == true) {
                         number = it
                     }
                 },
-                label = { Text("Počet sourozenců (hodnota menší než 20)") },
+                label = { Text("Hmotnost (hodnota menší než 200)") },
                 modifier = Modifier.fillMaxWidth()
             )
             OutlinedTextField(
@@ -149,7 +149,7 @@ fun ComposePerson() {
             ) {
                 Button(
                     onClick = {
-                        resultText = "Jmenuji se $name $surname. Je mi $age let a moje bydliště je $place, má ulice je $street."
+                        resultText = "Jmenuji se $name $surname. Je mi $age let, mám hmotnost $number a moje bydliště je $place, má ulice je $street."
                     },
                     modifier = Modifier.weight(1f)
                 ) {
