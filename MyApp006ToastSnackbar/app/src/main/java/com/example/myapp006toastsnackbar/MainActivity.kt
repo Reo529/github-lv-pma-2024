@@ -3,6 +3,8 @@ package com.example.myapp006toastsnackbar
 import android.graphics.Color
 import android.os.Bundle
 import android.view.View
+import android.widget.ImageView
+import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -23,10 +25,10 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         //Nastavení akce pro tlačítko TOAST
-        binding.btnShowToast.setOnClickListener {
-        val toast = Toast.makeText( this, "Nazdar - mám hlad", Toast.LENGTH_LONG)
-        toast.show()
-        }
+        // binding.btnShowToast.setOnClickListener {
+        // val toast = Toast.makeText( this, "Nazdar - mám hlad", Toast.LENGTH_LONG)
+        // toast.show()
+        //}
 
         binding.btnShowSnackbar.setOnClickListener {
 
@@ -41,5 +43,17 @@ class MainActivity : AppCompatActivity() {
 
 
         }
+        binding.btnShowToast.setOnClickListener {
+            val inflater = layoutInflater
+            val customToastView = inflater.inflate(R.layout.custom_toast, null)
+            val toastText = customToastView.findViewById<TextView>(R.id.toast_text)
+                        val toastIcon = customToastView.findViewById<ImageView>(R.id.toast_icon)
+            toastIcon.setImageResource(R.drawable.toast)
+            val customToast = Toast(applicationContext)
+            customToast.duration = Toast.LENGTH_LONG
+            customToast.view = customToastView // Nastavení vlastního layoutu
+            customToast.show()
+        }
+
     }
 }
