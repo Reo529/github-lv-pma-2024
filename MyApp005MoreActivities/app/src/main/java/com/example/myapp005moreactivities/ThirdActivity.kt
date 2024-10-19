@@ -1,6 +1,7 @@
 package com.example.myapp005moreactivities
 
 import android.os.Bundle
+import android.widget.Button
 import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -15,6 +16,13 @@ class ThirdActivity : AppCompatActivity() {
 
         val twInfo2 = findViewById<TextView>(R.id.twInfo2)
 
+        val reasons = intent.getStringExtra("REASONS")
+        twInfo2.text = "Data ze druhé aktivity. Důvod, proč vás lidi mají oslovovat touto přezdívkou: $reasons"
+
+        val btnBack2 = findViewById<Button>(R.id.btnBack2)
+        btnBack2.setOnClickListener{
+            finish()
+        }
 
         }
     }

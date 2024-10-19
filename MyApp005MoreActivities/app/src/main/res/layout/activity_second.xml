@@ -9,10 +9,7 @@
     android:orientation="vertical"
     android:padding="16sp">
 
-    <androidx.appcompat.widget.Toolbar
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        //IDK CO TADY >
+
 
 
     <TextView
@@ -22,6 +19,15 @@
         android:text="Data z první aktivity: "
 
         />
+
+    <EditText
+        android:id="@+id/etReasons"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Zadejte proč by lidé měli tuto přezdívu respektovat">
+
+    </EditText>
+
 
     <Button
         android:id="@+id/btnThird"
