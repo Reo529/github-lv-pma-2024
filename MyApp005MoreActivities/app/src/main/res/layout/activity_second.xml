@@ -7,16 +7,23 @@
     android:layout_height="match_parent"
     tools:context=".SecondActivity"
     android:orientation="vertical"
-    android:padding="16sp">
+    >
 
-
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/topbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?attr/colorPrimary"
+        android:titleTextColor="@android:color/black" />
 
 
     <TextView
         android:id="@+id/twInfo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Data z první aktivity: "
+        android:text="Jak jste se pojmenovali: "
+        android:textSize="20dp"
+        android:layout_margin="16sp"
 
         />
 
@@ -24,7 +31,10 @@
         android:id="@+id/etReasons"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Zadejte proč by lidé měli tuto přezdívu respektovat">
+        android:hint="Zadejte proč by lidé měli tuto přezdívu respektovat"
+        android:layout_margin="16sp"
+        >
+
 
     </EditText>
 
@@ -33,7 +43,8 @@
         android:id="@+id/btnThird"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Třetí aktivita"
+        android:text="Pokračovat"
+        android:layout_margin="16sp"
         />
 
     <Button
@@ -41,6 +52,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Zavřít aktivitu"
+        android:layout_margin="16sp"
         />
 
 

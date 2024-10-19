@@ -23,7 +23,5 @@ class ThirdActivity : AppCompatActivity() {
         btnBack2.setOnClickListener{
             finish()
         }
-
-        }
     }
 }

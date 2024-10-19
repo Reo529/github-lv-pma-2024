@@ -24,6 +24,8 @@ class SecondActivity : AppCompatActivity() {
 
         val etReasons = findViewById<EditText>(R.id.etReasons)
 
+
+
         val btnBack = findViewById<Button>(R.id.btnBack)
         btnBack.setOnClickListener{
         finish()

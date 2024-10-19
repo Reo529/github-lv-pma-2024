@@ -7,15 +7,24 @@
     android:layout_height="match_parent"
     tools:context=".ThirdActivity"
     android:orientation="vertical"
-    android:padding="16sp">
+    >
 
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/topbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?attr/colorPrimary"
+        android:title="Topbar Title"
+        android:titleTextColor="@android:color/white" />
 
     <TextView
         android:id="@+id/twInfo2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Data ze druhé aktivity: "
-
+        android:text="Vaše úžasné důvody: "
+        android:textSize="20dp"
+        android:layout_margin="16sp"
 
     />
 
@@ -23,7 +32,8 @@
         android:id="@+id/btnBack2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Zpátky"
+        android:text="Zpátky na změnu přezdívky"
+        android:layout_margin="16sp"
     />
 
 
