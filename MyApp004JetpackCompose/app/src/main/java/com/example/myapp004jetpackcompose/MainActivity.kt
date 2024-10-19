@@ -69,7 +69,7 @@ fun ComposePerson() {
     var place by remember { mutableStateOf("") }
     var resultText by remember { mutableStateOf("") }
     var street by remember { mutableStateOf("") }
-    var number by remember { mutableStateOf("") }
+    var weight by remember { mutableStateOf("") }
 
 
     Scaffold(
@@ -119,11 +119,11 @@ fun ComposePerson() {
             )
 
             OutlinedTextField(
-                value = number,
-                onValueChange = {number
+                value = weight,
+                onValueChange = {
                     // Omezíme vstup na číslice a kontrolujeme, že číslo není větší než 150
                     if (it.all { char -> char.isDigit() } && it.toIntOrNull()?.let { it <= 200 } == true) {
-                        number = it
+                        weight = it
                     }
                 },
                 label = { Text("Hmotnost (hodnota menší než 200)") },
@@ -137,7 +137,7 @@ fun ComposePerson() {
             )
             OutlinedTextField(
                 value = street,
-                onValueChange = { name = it },
+                onValueChange = { street = it },
                 label = { Text("Ulice") },
                 modifier = Modifier.fillMaxWidth()
             )
@@ -149,7 +149,7 @@ fun ComposePerson() {
             ) {
                 Button(
                     onClick = {
-                        resultText = "Jmenuji se $name $surname. Je mi $age let, mám hmotnost $number a moje bydliště je $place, má ulice je $street."
+                        resultText = "Jmenuji se $name $surname. Je mi $age let, mám hmotnost $weight kg a moje bydliště je $place, má ulice je $street."
                     },
                     modifier = Modifier.weight(1f)
                 ) {
@@ -163,7 +163,7 @@ fun ComposePerson() {
                         age = ""
                         place = ""
                         street = ""
-                        number = ""
+                        weight = ""
                         resultText = ""
                     },
                     modifier = Modifier.weight(1f),
