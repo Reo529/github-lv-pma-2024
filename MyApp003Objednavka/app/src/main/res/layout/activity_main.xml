@@ -87,27 +87,19 @@
         android:id="@+id/btnShowToast"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="60dp"
         android:backgroundTint="@color/Colour1"
         android:text="Uložit záložku"
-        app:layout_constraintBottom_toTopOf="@+id/btnShowSnackbar"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0"
 
         />
 
     <Button
         android:id="@+id/btnShowSnackbar"
-        android:layout_width="194dp"
-        android:layout_height="45dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:backgroundTint="@color/Colour1"
         android:text="Zkopírovat odkaz"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.53"
-        app:layout_constraintStart_toStartOf="parent"
+
         />
 
 </LinearLayout>
