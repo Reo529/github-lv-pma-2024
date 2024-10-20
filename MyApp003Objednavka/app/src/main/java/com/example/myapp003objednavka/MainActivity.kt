@@ -33,12 +33,12 @@ class MainActivity : AppCompatActivity() {
 
         binding.btnShowSnackbar.setOnClickListener {
 
-            Snackbar.make(binding.root, "Já jsem asi SNACKBAR", Snackbar.LENGTH_LONG)
+            Snackbar.make(binding.root, "Odkaz byl zkopírován", Snackbar.LENGTH_LONG)
                 .setBackgroundTint(Color.parseColor("#FF4545"))
                 .setActionTextColor(Color.WHITE)
                 .setDuration(5000)
                 .setAction("Zavřít") {
-                    Toast.makeText(this, "Zavírám SNACKBAR", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this, "Zavírá se zkopírování odkazu", Toast.LENGTH_SHORT).show()
                 }
                 .show()
 

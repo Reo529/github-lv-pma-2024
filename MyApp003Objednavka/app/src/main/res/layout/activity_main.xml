@@ -61,29 +61,34 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="protiskluzové mazání"/>
-    <Button
-        android:id="@+id/btnObjednavka"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:backgroundTint="@color/Colour1"
-        android:text="Objednat sedlo"/>
-    <TextView
-        android:id="@+id/tvObjednavka"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Souhrn objednávky: "/>
+
+
     <ImageView
         android:id="@+id/ivSedlo"
         android:layout_width="match_parent"
         android:layout_height="200dp"
         android:src="@drawable/sedlo_1"
         android:scaleType="centerInside"/>
+    <Button
+        android:id="@+id/btnObjednavka"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/Colour1"
+        android:text="Objednat sedlo"
+        android:layout_gravity="center"
+        android:layout_margin="50dp"/>
+    <TextView
+        android:id="@+id/tvObjednavka"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Souhrn objednávky: "/>
 
     <Button
         android:id="@+id/btnShowToast"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="150dp"
+        android:layout_marginTop="50dp"
+        android:backgroundTint="@color/Colour1"
         android:text="Uložit záložku"
         app:layout_constraintBottom_toTopOf="@+id/btnShowSnackbar"
         app:layout_constraintEnd_toEndOf="parent"
@@ -97,12 +102,13 @@
         android:id="@+id/btnShowSnackbar"
         android:layout_width="194dp"
         android:layout_height="45dp"
-        android:layout_marginBottom="212dp"
-        android:text="Zobrazit Snackbar"
+        android:backgroundTint="@color/Colour1"
+        android:text="Zkopírovat odkaz"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.53"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        />
 
 </LinearLayout>
 
