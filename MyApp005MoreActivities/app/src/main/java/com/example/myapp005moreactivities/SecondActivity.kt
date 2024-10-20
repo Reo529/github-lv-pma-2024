@@ -9,30 +9,32 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.example.myapp005moreactivities.databinding.ActivitySecondBinding
 
 class SecondActivity : AppCompatActivity() {
+
+    private lateinit var binding: ActivitySecondBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         //enableEdgeToEdge()
-        setContentView(R.layout.activity_second)
+        binding = ActivitySecondBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
-        val twInfo = findViewById<TextView>(R.id.twInfo)
+        val twInfo = binding.twInfo
         //Načtení dat z intentu
 
         val nickname = intent.getStringExtra("NICK_NAME")
-        twInfo.text = "Data z první aktivity. Jméno: $nickname"
+        twInfo.text = "Jméno: $nickname"
 
-        val etReasons = findViewById<EditText>(R.id.etReasons)
+        val etReasons = binding.etReasons
 
 
-
-        val btnBack = findViewById<Button>(R.id.btnBack)
-        btnBack.setOnClickListener{
+        binding.btnBack.setOnClickListener{
         finish()
             }
 
-        val btnThird = findViewById<Button>(R.id.btnThird)
-        btnThird.setOnClickListener {
+        binding.btnThird.setOnClickListener {
             val reasons = etReasons.text.toString()
             val intent = Intent (this, ThirdActivity::class.java)
             intent.putExtra("REASONS", reasons)

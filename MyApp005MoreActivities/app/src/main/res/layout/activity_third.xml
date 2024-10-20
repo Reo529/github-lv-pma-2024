@@ -22,7 +22,7 @@
         android:id="@+id/twInfo2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Vaše úžasné důvody: "
+
         android:textSize="20dp"
         android:layout_margin="16sp"
 
@@ -32,7 +32,7 @@
         android:id="@+id/btnBack2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Zpátky na změnu přezdívky"
+        android:text="Chci jinou přezdívku"
         android:layout_margin="16sp"
     />
 

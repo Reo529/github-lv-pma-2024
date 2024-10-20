@@ -7,20 +7,23 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.example.myapp005moreactivities.databinding.ActivityThirdBinding
 
 class ThirdActivity : AppCompatActivity() {
+
+    private lateinit var binding: ActivityThirdBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         //enableEdgeToEdge()
-        setContentView(R.layout.activity_third)
+        binding = ActivityThirdBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
-        val twInfo2 = findViewById<TextView>(R.id.twInfo2)
 
         val reasons = intent.getStringExtra("REASONS")
-        twInfo2.text = "Data ze druhé aktivity. Důvod, proč vás lidi mají oslovovat touto přezdívkou: $reasons"
+        binding.twInfo2.text = "Vaše důvody: $reasons"
 
-        val btnBack2 = findViewById<Button>(R.id.btnBack2)
-        btnBack2.setOnClickListener{
+        binding.btnBack2.setOnClickListener{
             finish()
         }
     }
