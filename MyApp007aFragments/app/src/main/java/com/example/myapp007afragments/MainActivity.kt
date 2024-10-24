@@ -41,6 +41,6 @@ class MainActivity : AppCompatActivity() {
 
         //potvrdí transakci a provede výměnu fragmentu
         fragmentTransaction.commit()
-    
+
     }
     }
