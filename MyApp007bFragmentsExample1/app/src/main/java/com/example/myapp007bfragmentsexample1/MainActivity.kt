@@ -38,6 +38,3 @@ class MainActivity : AppCompatActivity() {
             .commit()
     }
 }
-        }
-    }
-}
