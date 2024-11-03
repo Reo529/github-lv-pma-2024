@@ -29,6 +29,7 @@ class MainActivity : AppCompatActivity() {
         val bundle = Bundle().apply {
             putString("title", title)
             putString("author", author)
+            putInt("imageResId", R.drawable.ic_launcher_foreground)
         }
         detailFragment.arguments = bundle
 

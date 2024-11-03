@@ -25,4 +25,11 @@
         android:layout_height="wrap_content"
         android:text="Description" />
 
+    <ImageView
+        android:id="@+id/imageViewDetail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_launcher_foreground"
+        android:layout_gravity="center" />
+
 </LinearLayout>

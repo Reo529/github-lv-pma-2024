@@ -34,6 +34,8 @@ class ListFragment : Fragment() {
         val view = inflater.inflate(R.layout.fragment_list, container, false)
         listView = view.findViewById(R.id.listViewBooks)
 
+
+
         val adapter = ArrayAdapter(
             requireContext(),
             android.R.layout.simple_list_item_1,
