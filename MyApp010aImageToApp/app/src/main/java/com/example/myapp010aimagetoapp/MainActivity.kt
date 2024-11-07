@@ -21,6 +21,6 @@ class MainActivity : AppCompatActivity() {
 
         val getContent = registerForActivityResult(ActivityResultContracts.GetContent()) {
         uri: Uri? -> binding.ivImage.setImageURI(uri)
+binding.btnTakeImage.setOnClickListener {getContent.launch("image/*")
         }
-    }
 }
