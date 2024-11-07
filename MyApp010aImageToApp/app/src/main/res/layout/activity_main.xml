@@ -54,6 +54,6 @@
         app:layout_constraintLeft_toRightOf="@+id/btnApplyFilter"
         app:layout_constraintStart_toStartOf="parent" />
 
-    
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
