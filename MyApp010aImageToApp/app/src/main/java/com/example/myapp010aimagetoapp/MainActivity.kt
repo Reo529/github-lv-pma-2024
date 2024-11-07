@@ -36,6 +36,9 @@ class MainActivity : AppCompatActivity() {
         binding.btnRemoveFilter.setOnClickListener {
             removeFilter()
             }
+        binding.ivRotace.setOnClickListener {
+            rotateImage()
+        }
 
     }
 
@@ -56,5 +59,18 @@ class MainActivity : AppCompatActivity() {
         private fun removeFilter () {
         val imageView = binding.ivImage
         imageView.colorFilter = null  // Odstraní jakýkoli aplikovaný filtr
+    }
+
+// Funkce pro otáčení obrázku o 90 stupňů
+private fun rotateImage() {
+    val imageView = binding.ivImage
+    val bitmap = (imageView.drawable as? android.graphics.drawable.BitmapDrawable)?.bitmap
+
+    bitmap?.let {
+        val matrix = android.graphics.Matrix()
+        matrix.postRotate(90f)  // Otočení o 90 stupňů
+        val rotatedBitmap = Bitmap.createBitmap(bitmap, 0, 0, bitmap.width, bitmap.height, matrix, true)
+        imageView.setImageBitmap(rotatedBitmap)
+        }
     }
 }
