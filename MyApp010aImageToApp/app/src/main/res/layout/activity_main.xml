@@ -31,8 +31,29 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent" />
 
+    <Button
+        android:id="@+id/btnApplyFilter"
+        android:layout_width="167dp"
+        android:layout_height="54dp"
+        android:layout_marginBottom="108dp"
+        android:text="Aplikovat filtr"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.058"
+        app:layout_constraintStart_toStartOf="parent" />
 
+    <Button
+        android:id="@+id/btnRemoveFilter"
+        android:layout_width="138dp"
+        android:layout_height="52dp"
+        android:layout_marginBottom="108dp"
+        android:text="Odstranit filtr"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.862"
+        app:layout_constraintLeft_toRightOf="@+id/btnApplyFilter"
+        app:layout_constraintStart_toStartOf="parent" />
 
-
+    
 
 </androidx.constraintlayout.widget.ConstraintLayout>

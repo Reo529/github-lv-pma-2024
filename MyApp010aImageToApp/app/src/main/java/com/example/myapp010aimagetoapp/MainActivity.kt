@@ -1,5 +1,8 @@
 package com.example.myapp010aimagetoapp
 
+import android.graphics.ColorMatrix
+import android.graphics.Bitmap
+import android.graphics.ColorMatrixColorFilter
 import android.net.Uri
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
@@ -19,11 +22,39 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        val getContent = registerForActivityResult(ActivityResultContracts.GetContent()) {
-        uri: Uri? -> binding.ivImage.setImageURI(uri)
-        }
-        binding.btnTakeImage.setOnClickListener {
-        getContent.launch("image/*")
+        val getContent =
+            registerForActivityResult(ActivityResultContracts.GetContent()) { uri: Uri? ->
+                binding.ivImage.setImageURI(uri)
             }
+        binding.btnTakeImage.setOnClickListener {
+            getContent.launch("image/*")
         }
+        binding.btnApplyFilter.setOnClickListener {
+            applyBlackAndWhiteFilter()
+
+        }
+        binding.btnRemoveFilter.setOnClickListener {
+            removeFilter()
+            }
+
+    }
+
+    private fun applyBlackAndWhiteFilter() {
+        val imageView = binding.ivImage
+        val bitmap = (imageView.drawable as? android.graphics.drawable.BitmapDrawable)?.bitmap
+
+        bitmap?.let {
+            // Aplikování černobílého filtru
+            val colorMatrix = ColorMatrix()
+            colorMatrix.setSaturation(0f) // Černobílý filtr
+            val filter = ColorMatrixColorFilter(colorMatrix)
+
+            // Nastavení filtru na obrázek
+            imageView.colorFilter = filter
+        }
+    }
+        private fun removeFilter () {
+        val imageView = binding.ivImage
+        imageView.colorFilter = null  // Odstraní jakýkoli aplikovaný filtr
+    }
 }
