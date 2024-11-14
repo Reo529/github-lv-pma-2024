@@ -8,7 +8,7 @@ import com.example.myapp014amynotehub.databinding.ItemNoteBinding
 
 class NoteAdapter(
     private val notes: List<Note>,
-    private val onDeleteClick: (Note) -> Unit  // Funkce pro mazání poznámky
+    private val onDeleteClick: (Note) -> Unit  // Funkce pro mazání poznámky aaa
 ) : RecyclerView.Adapter<NoteAdapter.NoteViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): NoteViewHolder {
