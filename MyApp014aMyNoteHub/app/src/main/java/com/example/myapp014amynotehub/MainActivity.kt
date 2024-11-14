@@ -29,6 +29,8 @@ class MainActivity : AppCompatActivity() {
 
         // Inicializace databáze
         database = NoteHubDatabaseInstance.getDatabase(this)
+        insertDefaultCategories()
+        insertDefaultTags()
 
         // Inicializace RecyclerView
         binding.recyclerView.layoutManager = LinearLayoutManager(this)
@@ -46,8 +48,7 @@ class MainActivity : AppCompatActivity() {
 
         // Načtení poznámek z databáze
         loadNotes()
-        insertDefaultCategories()
-        insertDefaultTags()
+
     }
 
     private fun showAddNoteDialog() {
