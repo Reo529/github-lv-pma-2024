@@ -10,6 +10,7 @@ import androidx.core.view.WindowInsetsCompat
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.myapp014amynotehub.databinding.ActivityMainBinding
+import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.launch
 
 class MainActivity : AppCompatActivity() {
@@ -33,8 +34,8 @@ class MainActivity : AppCompatActivity() {
         binding.recyclerView.layoutManager = LinearLayoutManager(this)
         //noteAdapter = NoteAdapter(getSampleNotes())
 
-        noteAdapter = NoteAdapter(emptyList()) // Inicializace s prázdným seznamem
-        binding.recyclerView.adapter = noteAdapter
+        //noteAdapter = NoteAdapter(emptyList()) // Inicializace s prázdným seznamem
+        //binding.recyclerView.adapter = noteAdapter
 
         binding.fabAddNote.setOnClickListener {
             showAddNoteDialog()
@@ -45,6 +46,8 @@ class MainActivity : AppCompatActivity() {
 
         // Načtení poznámek z databáze
         loadNotes()
+        insertDefaultCategories()
+        insertDefaultTags()
     }
 
     private fun showAddNoteDialog() {
@@ -77,7 +80,9 @@ class MainActivity : AppCompatActivity() {
     private fun loadNotes() {
         lifecycleScope.launch {
             database.noteDao().getAllNotes().collect { notes ->
-                noteAdapter = NoteAdapter(notes)
+                noteAdapter = NoteAdapter(notes, onDeleteClick = { note ->
+                    deleteNote(note)
+                })
                 binding.recyclerView.adapter = noteAdapter
             }
         }
@@ -93,6 +98,43 @@ class MainActivity : AppCompatActivity() {
             sampleNotes.forEach { database.noteDao().insert(it) }
         }
     }
+
+    private fun insertDefaultCategories() {
+        lifecycleScope.launch {
+            val existingCategories = database.categoryDao().getAllCategories().first()  // Použití first() pro získání seznamu
+            if (existingCategories.isEmpty()) {
+                val defaultCategories = listOf(
+                    Category(name = "Práce"),
+                    Category(name = "Osobní"),
+                    Category(name = "Nápady")
+                )
+                defaultCategories.forEach { database.categoryDao().insert(it) }
+            }
+        }
+    }
+
+    private fun insertDefaultTags() {
+        lifecycleScope.launch {
+            val existingTags = database.tagDao().getAllTags().first()  // Použití first() pro získání seznamu
+            if (existingTags.isEmpty()) {
+                val defaultTags = listOf(
+                    Tag(name = "Důležité"),
+                    Tag(name = "Rychlé úkoly"),
+                    Tag(name = "Projekt"),
+                    Tag(name = "Nápad")
+                )
+                defaultTags.forEach { database.tagDao().insert(it) }
+            }
+        }
+    }
+    private fun deleteNote(note: Note) {
+        lifecycleScope.launch {
+            database.noteDao().delete(note)  // Smazání poznámky z databáze
+            loadNotes()  // Aktualizace seznamu poznámek
+        }
+    }
+
+
 
     /*private fun getSampleNotes(): List<Note> {
         // Testovací seznam poznámek
