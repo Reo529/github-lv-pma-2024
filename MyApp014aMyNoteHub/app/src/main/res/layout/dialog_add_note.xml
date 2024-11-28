@@ -22,10 +22,13 @@
 
     <!-- Label pro kategorii -->
     <TextView
-        android:layout_width="wrap_content"
+        android:id="@+id/labelCategory"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Kategorie"
+        android:textSize="14sp"
         android:textStyle="bold"
+        android:textColor="@color/primaryTextColor"
         android:layout_marginTop="16dp" />
 
     <!-- Spinner pro výběr jedné kategorie -->
@@ -33,7 +36,9 @@
         android:id="@+id/spinnerCategory"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp" />
+        android:layout_marginTop="8dp"
+        android:spinnerMode="dropdown"
+        />
 
     <!-- Label pro štítky -->
     <TextView
