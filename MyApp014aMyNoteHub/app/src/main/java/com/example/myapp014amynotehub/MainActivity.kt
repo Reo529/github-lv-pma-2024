@@ -55,7 +55,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         // Vložení testovacích dat
-        // insertSampleNotes()
+        // insertSampleNotes()ddddd
 
         // Načtení poznámek z databáze
         loadNotes()
