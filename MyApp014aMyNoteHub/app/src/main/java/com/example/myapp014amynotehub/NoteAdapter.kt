@@ -10,10 +10,10 @@ import kotlinx.coroutines.launch
 
 class NoteAdapter(
     private val lifecycleScope: LifecycleCoroutineScope,  // Přidán lifecycleScope
-    private val database: NoteHubDatabase  // Přidána instance databáze
+    private val database: NoteHubDatabase,  // Přidána instance databáze
     private val notes: List<Note>,
     private val onDeleteClick: (Note) -> Unit,  // Funkce pro mazání poznámky aaa
-    private val onEditClick: (Note) -> Unit    // Funkce pro editaci poznámky
+    private val onEditClick: (Note) -> Unit,    // Funkce pro editaci poznámky
 ) : RecyclerView.Adapter<NoteAdapter.NoteViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): NoteViewHolder {

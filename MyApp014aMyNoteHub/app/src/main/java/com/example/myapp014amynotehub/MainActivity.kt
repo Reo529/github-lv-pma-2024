@@ -28,8 +28,8 @@ class MainActivity : AppCompatActivity() {
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState);
-        setupUI();
+        super.onCreate(savedInstanceState)
+
 
         title = "Moje poznámky"
 
@@ -40,6 +40,7 @@ class MainActivity : AppCompatActivity() {
         database = NoteHubDatabaseInstance.getDatabase(this)
         insertDefaultCategories()
         insertDefaultTags()
+        setupUI()
         // zakomentovat protože to tam nemá
 
         // Inicializace RecyclerView
@@ -58,6 +59,7 @@ class MainActivity : AppCompatActivity() {
 
         // Načtení poznámek z databáze
         loadNotes()
+
 
     }
 
