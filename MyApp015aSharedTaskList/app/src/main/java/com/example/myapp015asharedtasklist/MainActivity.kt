@@ -13,6 +13,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.myapp015asharedtasklist.databinding.ActivityMainBinding
 import com.google.firebase.FirebaseApp
 import com.google.firebase.firestore.FirebaseFirestore
+import com.google.firebase.firestore.ListenerRegistration
 
 class MainActivity : AppCompatActivity() {
 
@@ -20,6 +21,7 @@ class MainActivity : AppCompatActivity() {
     private val tasks = mutableListOf<Task>() // Lokální seznam úkolů
     private lateinit var taskAdapter: TaskAdapter
     private lateinit var firestore: FirebaseFirestore
+    private var listenerRegistration: ListenerRegistration? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -132,5 +134,8 @@ class MainActivity : AppCompatActivity() {
             taskAdapter.notifyDataSetChanged()
         }
     }
-
+    override fun onDestroy() {
+        super.onDestroy()
+        listenerRegistration?.remove() // Zrušíme listener při destrukci aktivity
+    }
     }
