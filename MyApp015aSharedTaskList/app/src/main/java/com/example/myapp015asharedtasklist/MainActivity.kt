@@ -47,6 +47,8 @@ class MainActivity : AppCompatActivity() {
 
         // Načtení úkolů z firestore db
         loadTasksFromFirestore()
+
+        listenToTaskUpdates()
     }
 
     private fun loadTasksFromFirestore() {
