@@ -86,3 +86,4 @@ class MainActivity : AppCompatActivity() {
         tasks.add(newTask)
         taskAdapter.notifyItemInserted(tasks.size - 1)
     }
+    }
