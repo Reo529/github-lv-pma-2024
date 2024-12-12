@@ -26,10 +26,18 @@ class MainActivity : AppCompatActivity() {
         // Vytvoření nového DetailFragment a nastavení argumentů
         val detailFragment = DetailFragment()
 
+        val imageResIds = arrayOf(
+            R.drawable.baseline_memory_24,  // Představuje první obrázek
+            R.drawable.ic_launcher_foreground,  // Představuje druhý obrázek
+            R.drawable.baseline_design_services_24   // Představuje třetí obrázek
+        )
+
+        val randomImageResId = imageResIds.random()  // Generuje náhodný obrázek
+
         val bundle = Bundle().apply {
             putString("title", title)
             putString("author", author)
-            putInt("imageResId", R.drawable.ic_launcher_foreground)
+            putInt("imageResId", randomImageResId)  // Uložení náhodného obrázku
         }
         detailFragment.arguments = bundle
 
