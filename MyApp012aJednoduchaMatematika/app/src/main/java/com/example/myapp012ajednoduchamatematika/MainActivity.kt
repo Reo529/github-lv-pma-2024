@@ -126,12 +126,12 @@ class MainActivity : AppCompatActivity() {
 
             override fun onFinish() {
                 TimeTextView?.text = "Konec času"
-                openDialog()
+                showDialog()
             }
         }.start()
     }
 
-    private fun openDialog() {
+    private fun showDialog() {
         val inflate = LayoutInflater.from(this)
         val winDialog = inflate.inflate(R.layout.win_layout, null)
         FinalScoreTextView = winDialog.findViewById(R.id.FinalScoreTextView)
@@ -143,14 +143,23 @@ class MainActivity : AppCompatActivity() {
         dialog.setView(winDialog)
 
         FinalScoreTextView?.text = "$points/$totalQuestions"
-        btnPlayAgain.setOnClickListener {
-            PlayAgain(it)
-        }
-        btnBack.setOnClickListener {
-            onBackPressed()
-        }
 
+// Vytvoření dialogového okna
         val showDialog = dialog.create()
         showDialog.show()
+
+        btnPlayAgain.setOnClickListener {
+            // Zavření dialogového okna
+            showDialog.dismiss()
+            // Logika pro restart hry
+            PlayAgain(it)
+        }
+
+        btnBack.setOnClickListener {
+            // Zavření dialogového okna
+            showDialog.dismiss()
+            // Návrat na předchozí obrazovku
+            onBackPressed()
+        }
     }
 }
