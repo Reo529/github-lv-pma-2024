@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">MyApp014aMyNoteHub</string>
+    <string name="editTextTitle">Název poznámky</string>
+    <string name="editTextContent">Obsah poznámky</string>
+    <string name="labelCategory">Kategorie</string>
+
 </resources>
