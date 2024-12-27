@@ -21,7 +21,7 @@ class MainActivity : AppCompatActivity() {
     private val tasks = mutableListOf<Task>() // Lokální seznam úkolů
     private lateinit var taskAdapter: TaskAdapter
     private lateinit var firestore: FirebaseFirestore
-    private var listenerRegistration: ListenerRegistration? = null
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -31,11 +31,8 @@ class MainActivity : AppCompatActivity() {
         binding.fabAddTask.setOnClickListener {
             showAddTaskDialog()
         }
-
-        FirebaseApp.initializeApp(this)
-        println("Firebase initialized successfully")
-
         firestore = FirebaseFirestore.getInstance()
+
 
         // Inicializace RecyclerView
         taskAdapter = TaskAdapter(tasks) { task ->
@@ -50,6 +47,9 @@ class MainActivity : AppCompatActivity() {
         // Načtení úkolů z firestore db
         loadTasksFromFirestore()
 
+
+        FirebaseApp.initializeApp(this)
+        println("Firebase initialized successfully")
         listenToTaskUpdates()
     }
 
@@ -111,14 +111,17 @@ class MainActivity : AppCompatActivity() {
         // Uložíme úkol do Firestore
         firestore.collection("tasks").document(newTask.id).set(newTask)
             .addOnSuccessListener {
-                tasks.add(newTask)
-                taskAdapter.notifyItemInserted(tasks.size - 1)
-                println("Task added to Firestore: $name")
+                // Zde přidáme úkol do seznamu pouze tehdy, pokud tam ještě není
+                if (tasks.none { it.id == newTask.id }) {
+                    tasks.add(newTask)
+                    taskAdapter.notifyItemInserted(tasks.size - 1)
+                    println("Task added to Firestore: $name")
+                }
             }
             .addOnFailureListener { e ->
                 println("Error adding task: ${e.message}")
             }
-            }
+    }
     private fun listenToTaskUpdates() {
         firestore.collection("tasks").addSnapshotListener { snapshots, e ->
             if (e != null) {
@@ -134,8 +137,5 @@ class MainActivity : AppCompatActivity() {
             taskAdapter.notifyDataSetChanged()
         }
     }
-    override fun onDestroy() {
-        super.onDestroy()
-        listenerRegistration?.remove() // Zrušíme listener při destrukci aktivity
-    }
+
     }
