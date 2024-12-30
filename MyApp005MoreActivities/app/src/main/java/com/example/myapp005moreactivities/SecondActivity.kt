@@ -27,15 +27,13 @@ class SecondActivity : AppCompatActivity() {
         val nickname = intent.getStringExtra("NICK_NAME")
         twInfo.text = "Jméno: $nickname"
 
-        val etReasons = binding.etReasons
-
 
         binding.btnBack.setOnClickListener{
         finish()
             }
 
         binding.btnThird.setOnClickListener {
-            val reasons = etReasons.text.toString()
+            val reasons = binding.etReasons.text.toString()
             val intent = Intent (this, ThirdActivity::class.java)
             intent.putExtra("REASONS", reasons)
             startActivity(intent)

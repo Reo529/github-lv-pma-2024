@@ -20,10 +20,9 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        val etNickname = binding.etNickname
 
         binding.btnSend.setOnClickListener{
-            val nickname = etNickname.text.toString() //Získáme text z edit text pole
+            val nickname = binding.etNickname.text.toString() //Získáme text z edit text pole
             val intent = Intent(this, SecondActivity::class.java)
             intent.putExtra("NICK_NAME", nickname)
             startActivity(intent)
