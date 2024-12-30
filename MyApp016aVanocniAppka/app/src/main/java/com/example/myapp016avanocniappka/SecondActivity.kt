@@ -1,11 +1,13 @@
 package com.example.myapp016avanocniappka
 
 import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import androidx.core.view.ViewCompat
@@ -27,6 +29,14 @@ class SecondActivity : AppCompatActivity() {
         binding.topbar.setTitleTextColor(ContextCompat.getColor(this, R.color.white))
 
 
-        }
+        val getContent =
+            registerForActivityResult(ActivityResultContracts.GetContent()) { uri: Uri? ->
+                binding.ivImage.setImageURI(uri)
+            }
+        binding.btnTakeImage.setOnClickListener {
+            getContent.launch("image/*")
 
+            }
+
+        }
     }
