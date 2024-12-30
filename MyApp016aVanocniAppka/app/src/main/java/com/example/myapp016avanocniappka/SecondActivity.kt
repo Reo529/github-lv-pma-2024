@@ -9,6 +9,7 @@ import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
+import androidx.cardview.widget.CardView
 import androidx.core.content.ContextCompat
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
@@ -24,9 +25,15 @@ class SecondActivity : AppCompatActivity() {
         binding = ActivitySecondBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+
+        val wish = intent.getStringExtra("WISH")
+        binding.twInfo.text = "Vaše přání: $wish"
+
         setSupportActionBar(binding.topbar)
         supportActionBar?.title = "Vánoční přání"
         binding.topbar.setTitleTextColor(ContextCompat.getColor(this, R.color.white))
+
+
 
 
         val getContent =
@@ -37,6 +44,12 @@ class SecondActivity : AppCompatActivity() {
             getContent.launch("image/*")
 
             }
+
+        binding.btnBack.setOnClickListener{
+            finish()
+        }
+
+
 
         }
     }

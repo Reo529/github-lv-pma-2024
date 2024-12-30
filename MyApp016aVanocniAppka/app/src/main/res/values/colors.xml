@@ -4,4 +4,5 @@
     <color name="white">#FFFFFFFF</color>
     <color name="whitechris">#CFCDCD</color>
     <color name="redchris">#CF0303</color>
+    <color name="border_color">#FF0000</color>
 </resources>

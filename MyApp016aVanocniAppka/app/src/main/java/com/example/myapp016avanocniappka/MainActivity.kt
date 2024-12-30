@@ -27,7 +27,7 @@ class MainActivity : AppCompatActivity() {
         binding.btnCreate.setOnClickListener {
             val wish = binding.etWish.text.toString() //Získáme text z edit text pole
             val intent = Intent(this, SecondActivity::class.java)
-            intent.putExtra("NICK_NAME", wish)
+            intent.putExtra("WISH", wish)
             startActivity(intent)
         }
 
