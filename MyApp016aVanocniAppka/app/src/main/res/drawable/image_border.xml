@@ -6,9 +6,9 @@
 
 
     <stroke
-        android:width="7dp"
-        android:color="#E6AA00" /> <!-- Zlatá barva -->
+        android:width="40dp"
+        android:color="#155C15" /> <!-- Zlatá barva -->
 
-    <corners android:radius="8dp" />
+    <corners android:radius="6dp" />
 </shape>
 

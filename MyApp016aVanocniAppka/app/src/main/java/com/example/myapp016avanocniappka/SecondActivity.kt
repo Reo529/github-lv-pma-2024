@@ -15,6 +15,7 @@ import androidx.core.content.ContextCompat
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.example.myapp016avanocniappka.databinding.ActivitySecondBinding
+import com.google.android.material.snackbar.Snackbar
 
 class SecondActivity : AppCompatActivity() {
 
@@ -48,6 +49,7 @@ class SecondActivity : AppCompatActivity() {
             getContent.launch("image/*") // Spustí volbu obrázku
         }
 
+
         // Akce pro návrat zpět
         binding.btnBack.setOnClickListener {
             finish() // Ukončí aktivitu
@@ -67,5 +69,9 @@ class SecondActivity : AppCompatActivity() {
                 Toast.makeText(this, "Nejprve vyberte obrázek!", Toast.LENGTH_SHORT).show()
             }
         }
+        setSupportActionBar(binding.topbar)
+        supportActionBar?.title = "Vánoční přání"
+        binding.topbar.setTitleTextColor(ContextCompat.getColor(this, R.color.white))
+
     }
-}
+    }

@@ -5,6 +5,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".MainActivity"
+    android:background="@color/cat"
     >
 
     <androidx.appcompat.widget.Toolbar
@@ -14,14 +15,31 @@
         android:background="@color/redchris"
         />
 
+    <TextView
+        android:id="@+id/etText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Milý Ježíšku, drahá rodino, k letošním Vánocům si přeji:"
+        android:layout_margin="20sp"
+        android:paddingTop="20dp"
+        android:textAlignment="center"
+        android:textSize="24dp"
+        android:textStyle="bold"
+        android:textColor="@color/redchris"
+        />
+
     <EditText
         android:id="@+id/etWish"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Zadejte, co si přejete dostat k Vánocům :):"
+        android:hint="Vyplňte vaše Vánoční přání :):"
+        android:textColorHint="@color/pinkish"
         android:layout_margin="16sp"
+        android:textAlignment="center"
+        android:textSize="24dp"
         android:paddingTop="20dp"
         />
+
 
 
     <Button
@@ -29,17 +47,22 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Vytvořit přání"
-        android:layout_margin="16dp"
         android:backgroundTint="@color/redchris"
         android:layout_gravity="center"
+        android:layout_margin="16dp"
+        android:textSize="16dp"
+
         />
 
-    <Button
-        android:id="@+id/btnHistory"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Historie přání"
-        android:layout_margin="16dp"
-        android:backgroundTint="@color/redchris"
-        />
+    <ImageView
+        android:id="@+id/ivCat"
+        android:layout_width="220dp"
+        android:layout_height="340dp"
+        android:layout_gravity="center"
+        android:scaleType="fitCenter"
+         android:background="@drawable/kocka"
+        android:padding="16dp"
+    />
+
+
 </LinearLayout>

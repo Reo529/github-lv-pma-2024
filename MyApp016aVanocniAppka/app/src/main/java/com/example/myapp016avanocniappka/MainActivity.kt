@@ -8,6 +8,7 @@ import androidx.core.view.WindowInsetsCompat
 import android.content.Intent
 import android.view.LayoutInflater
 import android.widget.Button
+import android.widget.Toast
 import androidx.appcompat.widget.Toolbar
 import androidx.core.content.ContextCompat
 import com.example.myapp016avanocniappka.databinding.ActivityMainBinding
@@ -26,14 +27,17 @@ class MainActivity : AppCompatActivity() {
 
         binding.btnCreate.setOnClickListener {
             val wish = binding.etWish.text.toString() //Získáme text z edit text pole
+            if (wish.isEmpty()) {
+                // Zobrazíme toast, pokud je EditText prázdný
+                Toast.makeText(this, "Bez přání to nepůjde!", Toast.LENGTH_SHORT).show()
+            } else {
             val intent = Intent(this, SecondActivity::class.java)
             intent.putExtra("WISH", wish)
             startActivity(intent)
+
         }
 
-        binding.btnHistory.setOnClickListener {
-            Snackbar.make(it, "Historie přání bude dostupná brzy!", Snackbar.LENGTH_LONG).show()
-        }
+
 
         setSupportActionBar(binding.topbar)
         supportActionBar?.title = "Vánoční přání"
@@ -41,5 +45,5 @@ class MainActivity : AppCompatActivity() {
 
     }
 
-
+    }
 }

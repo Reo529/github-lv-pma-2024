@@ -17,6 +17,7 @@ class CardActivity : AppCompatActivity() {
 
         // Získání dat z intentu
         val wish = intent.getStringExtra("WISH")
+        binding.twWish.text = "$wish"
         val imageUri = intent.getStringExtra("IMAGE_URI")
 
         if (wish != null && imageUri != null) {
@@ -24,8 +25,6 @@ class CardActivity : AppCompatActivity() {
             binding.twWish.text = wish
             binding.ivWishImage.setImageURI(Uri.parse(imageUri))
         } else {
-            // Pokud data chybí, zobrazíme zprávu a aktivitu ukončíme
-            Toast.makeText(this, "Data pro přání nebo obrázek nejsou dostupná.", Toast.LENGTH_LONG).show()
             finish()
         }
     }

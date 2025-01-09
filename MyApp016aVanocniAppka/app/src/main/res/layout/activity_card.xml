@@ -6,9 +6,20 @@
     android:layout_height="match_parent"
     tools:context=".CardActivity"
     android:orientation="vertical"
-    android:background="@drawable/chistmas_backround"
+    android:background="@drawable/christmas_background2"
     android:padding="16dp"
     >
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Mé letošní Vánoční přání je"
+        android:layout_gravity="center"
+        android:layout_marginTop="130dp"
+        android:textSize="24sp"
+        android:textColor="@android:color/black"
+        />
+
     <TextView
         android:id="@+id/twWish"
         android:layout_width="wrap_content"
@@ -16,17 +27,19 @@
         android:text="Vaše přání"
         android:textColor="@android:color/black"
         android:textSize="24sp"
-        android:layout_marginTop="140dp"
         android:gravity="center"
         android:layout_gravity="center"
-        android:padding="16dp" />
+        android:padding="8dp" />
+
+
 
     <ImageView
         android:id="@+id/ivWishImage"
-        android:layout_width="250dp"
+        android:layout_width="220dp"
         android:layout_height="360dp"
         android:layout_gravity="center"
-        android:scaleType="centerCrop"
+        android:scaleType="fitCenter"
+        android:padding="10dp"
         android:background="@drawable/image_border" />
 
 </LinearLayout>
