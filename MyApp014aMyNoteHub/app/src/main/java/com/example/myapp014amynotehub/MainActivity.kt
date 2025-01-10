@@ -68,7 +68,7 @@ class MainActivity : AppCompatActivity() {
         val titleEditText = dialogView.findViewById<EditText>(R.id.editTextTitle)
         val contentEditText = dialogView.findViewById<EditText>(R.id.editTextContent)
         val spinnerCategory = dialogView.findViewById<Spinner>(R.id.spinnerCategory)
-        val tagsEditText = dialogView.findViewById<Spinner>(R.id.editTextTags) // Přidání Spinneru pro štítky
+
 
         // Načtení kategorií z databáze a jejich zobrazení ve Spinneru
         lifecycleScope.launch {
