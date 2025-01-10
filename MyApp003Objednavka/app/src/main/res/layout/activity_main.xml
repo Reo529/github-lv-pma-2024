@@ -76,21 +76,20 @@
         android:backgroundTint="@color/Colour1"
         android:text="Objednat sedlo"
         android:layout_gravity="center"
-        android:layout_margin="50dp"/>
+        android:layout_margin="30dp"/>
     <TextView
         android:id="@+id/tvObjednavka"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="50dp"
         android:text="Souhrn objednávky: "/>
 
     <Button
         android:id="@+id/btnShowToast"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="60dp"
         android:backgroundTint="@color/Colour1"
         android:text="Uložit záložku"
-
+        android:layout_gravity="bottom"
         />
 
     <Button
@@ -99,6 +98,7 @@
         android:layout_height="wrap_content"
         android:backgroundTint="@color/Colour1"
         android:text="Zkopírovat odkaz"
+        android:layout_gravity="bottom"
 
         />
 
