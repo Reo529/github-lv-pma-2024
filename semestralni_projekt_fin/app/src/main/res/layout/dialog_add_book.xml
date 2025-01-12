@@ -48,7 +48,9 @@
             android:textSize="14sp"
             android:layout_margin="6dp"
             android:inputType="none"
-            android:focusable="false" />
+            android:focusable="false"
+            android:textAlignment="center"
+            />
 
 
     </LinearLayout>
@@ -58,11 +60,11 @@
         android:id="@+id/labelCategory"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="16dp"
+        android:layout_margin="8dp"
         android:text="Žánr"
         android:textSize="16dp"
         android:textStyle="bold"
-        android:textColor="@color/black" />
+         />
 
     <!-- Spinner pro výběr jedné kategorie -->
     <Spinner
