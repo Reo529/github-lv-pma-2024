@@ -1,7 +1,7 @@
 plugins {
     alias(libs.plugins.android.application)
-    alias(libs.plugins.kotlin.android)
-    id("com.google.devtools.ksp")
+    alias(libs.plugins.kotlin.android) version "2.0.21"
+    id("com.google.devtools.ksp") version "2.0.21-1.0.27" // Ensure KSP version is compatible with Kotlin 2.0.21
 }
 
 android {

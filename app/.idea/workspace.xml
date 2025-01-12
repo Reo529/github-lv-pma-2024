@@ -28,6 +28,13 @@
       <change afterPath="$PROJECT_DIR$/../MyAppskolni2/app/src/main/res/layout/add_book.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../MyAppskolni2/app/src/main/res/layout/item_book.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/caches/deviceStreaming.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/migrations.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/runConfigurations.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/build.gradle.kts" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/proguard-rules.pro" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/androidTest/java/com/example/semestralni_projekt/ExampleInstrumentedTest.kt" afterDir="false" />
@@ -81,6 +88,16 @@
       <change afterPath="$PROJECT_DIR$/../gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../gradlew" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../gradlew.bat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../semestralni_projekt_fin/app/src/main/java/com/example/semestralni_projekt/AppDatabase.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../semestralni_projekt_fin/app/src/main/java/com/example/semestralni_projekt/AppDatabaseInstance.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../semestralni_projekt_fin/app/src/main/java/com/example/semestralni_projekt/Book.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../semestralni_projekt_fin/app/src/main/java/com/example/semestralni_projekt/BookAdapter.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../semestralni_projekt_fin/app/src/main/java/com/example/semestralni_projekt/BookDao.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../semestralni_projekt_fin/app/src/main/java/com/example/semestralni_projekt/Category.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../semestralni_projekt_fin/app/src/main/java/com/example/semestralni_projekt/CategoryDao.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../semestralni_projekt_fin/app/src/main/res/drawable/baseline_add_24.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../semestralni_projekt_fin/app/src/main/res/layout/dialog_add_book.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../semestralni_projekt_fin/app/src/main/res/layout/item_book.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../settings.gradle.kts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../MyApp014aMyNoteHub/app/src/main/res/layout/dialog_add_note.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../MyApp014aMyNoteHub/app/src/main/res/layout/dialog_add_note.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../MyApp015aSharedTaskList/.idea/deploymentTargetSelector.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../MyApp015aSharedTaskList/.idea/deploymentTargetSelector.xml" afterDir="false" />
@@ -109,9 +126,9 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 0
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 0
+}</component>
   <component name="ProjectId" id="2rX09S0314IGR93C84YutkKaGWt" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -127,7 +144,7 @@
     "cidr.known.project.marker": "true",
     "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/AAA/github-lv-pma-2024/app"
+    "last_opened_file_path": "C:/Users/ASUS/OneDrive/Plocha/app"
   }
 }]]></component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />

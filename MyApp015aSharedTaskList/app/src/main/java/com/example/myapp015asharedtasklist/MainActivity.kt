@@ -31,8 +31,11 @@ class MainActivity : AppCompatActivity() {
         binding.fabAddTask.setOnClickListener {
             showAddTaskDialog()
         }
-        firestore = FirebaseFirestore.getInstance()
+        FirebaseApp.initializeApp(this)
+        println("Firebase initialized successfully")
 
+
+        firestore = FirebaseFirestore.getInstance()
 
         // Inicializace RecyclerView
         taskAdapter = TaskAdapter(tasks) { task ->
@@ -46,27 +49,13 @@ class MainActivity : AppCompatActivity() {
 
         // Načtení úkolů z firestore db
         loadTasksFromFirestore()
-
-
-        FirebaseApp.initializeApp(this)
-        println("Firebase initialized successfully")
         listenToTaskUpdates()
+
+
     }
 
-    private fun loadTasksFromFirestore() {
-        firestore.collection("tasks").get()
-            .addOnSuccessListener { result ->
-                tasks.clear()
-                for (document in result) {
-                    val task = document.toObject(Task::class.java)
-                    tasks.add(task)
-                }
-                taskAdapter.notifyDataSetChanged()
-                println("Tasks loaded from Firestore")
-            }
-            .addOnFailureListener { e ->
-                println("Error loading tasks: ${e.message}")
-            }
+    private fun loadTasks() {
+        taskAdapter.notifyDataSetChanged()
     }
 
     private fun updateTask(task: Task) {
@@ -75,30 +64,30 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun showAddTaskDialog() {
-    val builder = AlertDialog.Builder(this)
-    builder.setTitle("Add Task")
+        val builder = AlertDialog.Builder(this)
+        builder.setTitle("Add Task")
 
-    // Vytvoření vstupního pole
-    val input = EditText(this)
-    input.hint = "Task name"
-    input.inputType = InputType.TYPE_CLASS_TEXT
-    builder.setView(input)
+        // Vytvoření vstupního pole
+        val input = EditText(this)
+        input.hint = "Task name"
+        input.inputType = InputType.TYPE_CLASS_TEXT
+        builder.setView(input)
 
-    // Tlačítka dialogu
-    builder.setPositiveButton("Add") { _, _ ->
-        val taskName = input.text.toString()
-        if (taskName.isNotBlank()) {
-            addTask(taskName)
-        } else {
-            Toast.makeText(this, "Task name cannot be empty", Toast.LENGTH_SHORT).show()
+        // Tlačítka dialogu
+        builder.setPositiveButton("Add") { _, _ ->
+            val taskName = input.text.toString()
+            if (taskName.isNotBlank()) {
+                addTask(taskName)
+            } else {
+                Toast.makeText(this, "Task name cannot be empty", Toast.LENGTH_SHORT).show()
+            }
         }
-    }
-    builder.setNegativeButton("Cancel") { dialog, _ ->
-        dialog.cancel()
-    }
+        builder.setNegativeButton("Cancel") { dialog, _ ->
+            dialog.cancel()
+        }
 
-    builder.show()
-}
+        builder.show()
+    }
 
     private fun addTask(name: String) {
         val newTask = Task(
@@ -122,6 +111,25 @@ class MainActivity : AppCompatActivity() {
                 println("Error adding task: ${e.message}")
             }
     }
+
+    private fun loadTasksFromFirestore() {
+        firestore.collection("tasks").get()
+            .addOnSuccessListener { result ->
+                tasks.clear()
+                for (document in result) {
+                    val task = document.toObject(Task::class.java)
+                    tasks.add(task)
+                }
+                taskAdapter.notifyDataSetChanged()
+                println("Tasks loaded from Firestore")
+            }
+            .addOnFailureListener { e ->
+                println("Error loading tasks: ${e.message}")
+            }
+    }
+
+
+
     private fun listenToTaskUpdates() {
         firestore.collection("tasks").addSnapshotListener { snapshots, e ->
             if (e != null) {

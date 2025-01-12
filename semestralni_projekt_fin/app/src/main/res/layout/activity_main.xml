@@ -32,19 +32,19 @@
 
     <!-- Tlačítko pro řazení podle názvu -->
 
-    <!-- RecyclerView pro seznam poznámek -->
-
     <Button
         android:id="@+id/btnSortByName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="8dp"
         android:text="Řadit podle názvu"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/spinnerFilterCategory"
         app:layout_constraintTop_toBottomOf="@id/topbar" />
 
+
+    <!-- RecyclerView pro seznam poznámek -->
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView"
         android:layout_width="match_parent"

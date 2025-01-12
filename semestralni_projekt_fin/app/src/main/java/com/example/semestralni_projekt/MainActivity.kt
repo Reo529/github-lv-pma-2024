@@ -5,7 +5,9 @@ import android.os.Bundle
 import android.view.View
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
+import android.widget.CheckBox
 import android.widget.EditText
+import android.widget.RatingBar
 import android.widget.Spinner
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AlertDialog
@@ -64,6 +66,8 @@ class MainActivity : AppCompatActivity() {
         val authorEditText = dialogView.findViewById<EditText>(R.id.etAuthor)
         val spinnerCategory = dialogView.findViewById<Spinner>(R.id.spinnerCategory)
         val commentEditText = dialogView.findViewById<EditText>(R.id.etComment)
+        val cbReading = dialogView.findViewById<CheckBox>(R.id.cbReading)
+        val ratingBar = dialogView.findViewById<RatingBar>(R.id.ratingBar) // Přidání RatingBaru
 
 // Načtení kategorií z databáze a jejich zobrazení ve Spinneru
         lifecycleScope.launch {
@@ -82,12 +86,14 @@ class MainActivity : AppCompatActivity() {
                 val author = authorEditText.text.toString()
                 val selectedCategory = spinnerCategory.selectedItem.toString() // Získáme vybranou kategorii
                 val comment = commentEditText.text.toString()
+                val isRead = cbReading.isChecked
+                val rating = ratingBar.rating
 
                 // Najdeme ID vybrané kategorie
                 lifecycleScope.launch {
                     val category = database.categoryDao().getCategoryByName(selectedCategory)
                     if (category != null) {
-                        addBookToDatabase(title, author, category.id, comment)
+                        addBookToDatabase(title, author, category.id, comment, isRead, rating)
                     }
                 }
             }
@@ -99,9 +105,9 @@ class MainActivity : AppCompatActivity() {
 
 
 
-    private fun addBookToDatabase(title: String, author: String, categoryId: Int, comment: String) {
+    private fun addBookToDatabase(title: String, author: String, categoryId: Int, comment: String, isRead: Boolean, rating: Float) {
         lifecycleScope.launch {
-            val newBook = Book(title = title, author = author, categoryId = categoryId, comment = comment)
+            val newBook = Book(title = title, author = author, categoryId = categoryId, comment = comment, isRead = isRead, rating = rating)
             database.bookDao().insert(newBook)  // Vloží poznámku do databáze
             loadBooks()  // Aktualizuje seznam poznámek
         }
@@ -149,7 +155,7 @@ class MainActivity : AppCompatActivity() {
     }
     private fun insertDefaultCategories() {
         lifecycleScope.launch {
-            val categories = database.categoryDao().getAllCategories().first()
+
             val defaultCategories = listOf(
                 "Román",
                 "Detektivka",
@@ -157,17 +163,19 @@ class MainActivity : AppCompatActivity() {
                 "Fantasy",
                 "Historie",
                 "Biografie",
-                "Poetry",
+                "Poezie",
                 "Horor",
                 "Komedie"
             )
 
             for (categoryName in defaultCategories) {
                 val existingCategory = database.categoryDao().getCategoryByName(categoryName)
+
                 if (existingCategory == null) {
                     // Kategorie s tímto názvem neexistuje, vložíme ji
                     database.categoryDao().insert(Category(name = categoryName))
                 }
+                val categories = database.categoryDao().getAllCategories().first()
             }
         }
     }
@@ -184,6 +192,8 @@ class MainActivity : AppCompatActivity() {
         val contentEditText = dialogView.findViewById<EditText>(R.id.etAuthor)
         val spinnerCategory = dialogView.findViewById<Spinner>(R.id.spinnerCategory)
         val commentEditText = dialogView.findViewById<EditText>(R.id.etComment)
+        val cbReading = dialogView.findViewById<CheckBox>(R.id.cbReading) // Načteme checkbox
+        val ratingBar = dialogView.findViewById<RatingBar>(R.id.ratingBar) // Přidáme RatingBar
 
         // Načtení kategorií z databáze a jejich zobrazení ve Spinneru
         lifecycleScope.launch {
@@ -207,6 +217,8 @@ class MainActivity : AppCompatActivity() {
         titleEditText.setText(book.title)
         contentEditText.setText(book.author)
         commentEditText.setText(book.comment)
+        cbReading.isChecked = book.isRead // Nastavíme stav checkboxu
+        ratingBar.rating = book.rating
 
         val dialog = AlertDialog.Builder(this)
             .setTitle("Upravit knížku")
@@ -216,6 +228,8 @@ class MainActivity : AppCompatActivity() {
                 val updatedAuthor = contentEditText.text.toString()
                 val selectedCategory = spinnerCategory.selectedItem.toString()  // Získáme vybranou kategorii
                 val updatedComment = commentEditText.text.toString()
+                val isRead = cbReading.isChecked
+                val updatedRating = ratingBar.rating // Načteme hodnocení
 
                 // Aktualizace poznámky v databázi
                 lifecycleScope.launch {
@@ -225,7 +239,9 @@ class MainActivity : AppCompatActivity() {
                             title = updatedTitle,
                             author = updatedAuthor,
                             categoryId = category.id,  // Nastavíme ID vybrané kategorie
-                            comment = updatedComment
+                            comment = updatedComment,
+                            isRead = isRead, // Aktualizujeme stav
+                            rating = updatedRating // Uložíme nové hodnocení
                         )
                         database.bookDao().update(updatedNote)  // Uloží aktualizovanou poznámku
                         loadBooks()  // Načte a aktualizuje seznam poznámek

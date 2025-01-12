@@ -1,11 +1,13 @@
 plugins {
     alias(libs.plugins.android.application)
-    alias(libs.plugins.kotlin.android)
+    alias(libs.plugins.kotlin.android) version "2.0.21"
+    id("com.google.devtools.ksp") version "2.0.21-1.0.27" // Ensure KSP version is compatible with Kotlin 2.0.21
 }
+
 
 android {
     namespace = "com.example.myappskolni2"
-    compileSdk = 34
+    compileSdk = 35
 
     defaultConfig {
         applicationId = "com.example.myappskolni2"
@@ -33,10 +35,22 @@ android {
     kotlinOptions {
         jvmTarget = "1.8"
     }
+    buildFeatures {
+        viewBinding = true
+    }
 }
 
 dependencies {
 
+    val room_version = "2.6.1"
+
+    implementation("androidx.room:room-runtime:$room_version")
+
+    // If this project uses any Kotlin source, use Kotlin Symbol Processing (KSP)
+    // See Add the KSP plugin to your project
+    ksp("androidx.room:room-compiler:$room_version")
+    // Room KTX for Coroutine support
+    implementation("androidx.room:room-ktx:$room_version")  // Add this line for Kotlin Coroutines
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)
