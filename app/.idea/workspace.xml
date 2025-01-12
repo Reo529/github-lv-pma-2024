@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="NONE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="6bc4be2b-4ffc-494a-86d6-03610d445d53" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.idea/deploymentTargetSelector.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.idea/gradle.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.idea/kotlinc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.idea/migrations.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.idea/runConfigurations.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MyAppskolni2/app/src/main/java/com/example/myappskolni2/AppDatabase.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MyAppskolni2/app/src/main/java/com/example/myappskolni2/AppDatabaseInstance.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MyAppskolni2/app/src/main/java/com/example/myappskolni2/Book.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MyAppskolni2/app/src/main/java/com/example/myappskolni2/BookAdapter.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MyAppskolni2/app/src/main/java/com/example/myappskolni2/BookAddActivity.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MyAppskolni2/app/src/main/java/com/example/myappskolni2/BookDao.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MyAppskolni2/app/src/main/java/com/example/myappskolni2/Category.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MyAppskolni2/app/src/main/java/com/example/myappskolni2/CategoryDao.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MyAppskolni2/app/src/main/res/drawable/baseline_add_24.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MyAppskolni2/app/src/main/res/drawable/baseline_delete_24.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MyAppskolni2/app/src/main/res/drawable/baseline_spellcheck_24.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MyAppskolni2/app/src/main/res/layout/add_book.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MyAppskolni2/app/src/main/res/layout/item_book.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build.gradle.kts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/proguard-rules.pro" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/androidTest/java/com/example/semestralni_projekt/ExampleInstrumentedTest.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/AndroidManifest.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/semestralni_projekt/AddBookActivity.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/semestralni_projekt/AppDatabase.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/semestralni_projekt/AppDatabaseInstance.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/semestralni_projekt/Book.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/semestralni_projekt/BookAdapter.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/semestralni_projekt/BookDao.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/semestralni_projekt/Category.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/semestralni_projekt/CategoryDao.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/semestralni_projekt/MainActivity.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/res/drawable/baseline_add_24.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/res/drawable/baseline_book_24.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/res/drawable/baseline_delete_24.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/res/drawable/baseline_spellcheck_24.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/res/drawable/ic_launcher_background.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/res/drawable/ic_launcher_foreground.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/res/layout/activity_main.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/res/layout/dialog_add_book.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/res/layout/item_book.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/res/mipmap-hdpi/ic_launcher.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/res/mipmap-hdpi/ic_launcher_book.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/res/mipmap-hdpi/ic_launcher_round.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/res/mipmap-mdpi/ic_launcher.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/res/mipmap-mdpi/ic_launcher_book.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/res/mipmap-mdpi/ic_launcher_round.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/res/mipmap-xhdpi/ic_launcher.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/res/mipmap-xhdpi/ic_launcher_book.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/res/mipmap-xhdpi/ic_launcher_round.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/res/mipmap-xxhdpi/ic_launcher.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/res/mipmap-xxhdpi/ic_launcher_book.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/res/mipmap-xxhdpi/ic_launcher_round.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/res/mipmap-xxxhdpi/ic_launcher.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/res/mipmap-xxxhdpi/ic_launcher_book.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/res/mipmap-xxxhdpi/ic_launcher_round.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/res/values-night/themes.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/res/values/colors.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/res/values/strings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/res/values/themes.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/res/xml/backup_rules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/res/xml/data_extraction_rules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/example/semestralni_projekt/ExampleUnitTest.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../build.gradle.kts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../gradle.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../gradle/libs.versions.toml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../gradle/wrapper/gradle-wrapper.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../gradlew" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../gradlew.bat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../settings.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MyApp014aMyNoteHub/app/src/main/res/layout/dialog_add_note.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../MyApp014aMyNoteHub/app/src/main/res/layout/dialog_add_note.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MyApp015aSharedTaskList/.idea/deploymentTargetSelector.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../MyApp015aSharedTaskList/.idea/deploymentTargetSelector.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MyApp015aSharedTaskList/app/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/../MyApp015aSharedTaskList/app/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MyApp015aSharedTaskList/app/google-services.json" beforeDir="false" afterPath="$PROJECT_DIR$/../MyApp015aSharedTaskList/app/google-services.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MyApp015aSharedTaskList/app/src/main/java/com/example/myapp015asharedtasklist/MainActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../MyApp015aSharedTaskList/app/src/main/java/com/example/myapp015asharedtasklist/MainActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MyApp015aSharedTaskList/app/src/main/res/layout/activity_main.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../MyApp015aSharedTaskList/app/src/main/res/layout/activity_main.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MyApp015aSharedTaskList/app/src/main/res/layout/item_task.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../MyApp015aSharedTaskList/app/src/main/res/layout/item_task.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MyAppskolni2/app/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/../MyAppskolni2/app/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MyAppskolni2/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../MyAppskolni2/app/src/main/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MyAppskolni2/app/src/main/java/com/example/myappskolni2/MainActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../MyAppskolni2/app/src/main/java/com/example/myappskolni2/MainActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MyAppskolni2/app/src/main/res/layout/activity_main.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../MyAppskolni2/app/src/main/res/layout/activity_main.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MyAppskolni2/app/src/main/res/values/colors.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../MyAppskolni2/app/src/main/res/values/colors.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MyAppskolni2/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/../MyAppskolni2/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MyAppskolni2/gradle/libs.versions.toml" beforeDir="false" afterPath="$PROJECT_DIR$/../MyAppskolni2/gradle/libs.versions.toml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MyAppskolni2/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../MyAppskolni2/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ClangdSettings">
+    <option name="formatViaClangd" value="false" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 0
+}]]></component>
+  <component name="ProjectId" id="2rX09S0314IGR93C84YutkKaGWt" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.cidr.known.project.marker": "true",
+    "RunOnceActivity.readMode.enableVisualFormatting": "true",
+    "android.gradle.sync.needed": "true",
+    "cf.first.check.clang-format": "false",
+    "cidr.known.project.marker": "true",
+    "git-widget-placeholder": "main",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/AAA/github-lv-pma-2024/app"
+  }
+}]]></component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="6bc4be2b-4ffc-494a-86d6-03610d445d53" name="Changes" comment="" />
+      <created>1736689960544</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1736689960544</updated>
+    </task>
+    <servers />
+  </component>
+</project>
