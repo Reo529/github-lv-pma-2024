@@ -10,6 +10,15 @@ object AppDatabaseInstance {
     @Volatile
     private var INSTANCE: AppDatabase? = null
 
+
+    // Migrace 4 -> 5 (přidání sloupce 'startDate')
+    private val MIGRATION_4_5 = object : Migration(4, 5) {
+        override fun migrate(database: SupportSQLiteDatabase) {
+            // Přidání sloupce startDate do tabulky book_table
+            database.execSQL("ALTER TABLE book_table ADD COLUMN startDate TEXT")
+        }
+    }
+
     private val MIGRATION_3_4 = object : Migration(3, 4) {
         override fun migrate(database: SupportSQLiteDatabase) {
             database.execSQL("ALTER TABLE book_table ADD COLUMN rating REAL NOT NULL DEFAULT 0")

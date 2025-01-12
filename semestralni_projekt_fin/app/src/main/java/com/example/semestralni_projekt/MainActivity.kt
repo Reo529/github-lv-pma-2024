@@ -20,6 +20,9 @@ import com.example.semestralni_projekt.databinding.ActivityMainBinding
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.launch
 import org.w3c.dom.Comment
+import android.app.DatePickerDialog
+import android.widget.DatePicker
+import java.util.Calendar
 
 class MainActivity : AppCompatActivity() {
 
@@ -68,6 +71,7 @@ class MainActivity : AppCompatActivity() {
         val commentEditText = dialogView.findViewById<EditText>(R.id.etComment)
         val cbReading = dialogView.findViewById<CheckBox>(R.id.cbReading)
         val ratingBar = dialogView.findViewById<RatingBar>(R.id.ratingBar) // Přidání RatingBaru
+        val startDateEditText = dialogView.findViewById<EditText>(R.id.etStartDate)
 
 // Načtení kategorií z databáze a jejich zobrazení ve Spinneru
         lifecycleScope.launch {
@@ -77,6 +81,26 @@ class MainActivity : AppCompatActivity() {
             adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
             spinnerCategory.adapter = adapter
         }
+
+        // Přednastavení data na dnešní den
+        val calendar = Calendar.getInstance()
+        val year = calendar.get(Calendar.YEAR)
+        val month = calendar.get(Calendar.MONTH)
+        val dayOfMonth = calendar.get(Calendar.DAY_OF_MONTH)
+        startDateEditText.setText("${dayOfMonth}/${month + 1}/${year}") // Výchozí datum
+
+        // Otevření DatePickerDialog pouze při kliknutí na EditText
+        startDateEditText.setOnClickListener {
+            val datePickerDialog = DatePickerDialog(
+                this,
+                { _, selectedYear, selectedMonth, selectedDayOfMonth ->
+                    startDateEditText.setText("${selectedDayOfMonth}/${selectedMonth + 1}/${selectedYear}")
+                },
+                year, month, dayOfMonth
+            )
+            datePickerDialog.show()
+        }
+
 
         val dialog = AlertDialog.Builder(this)
             .setTitle("Přidat knížku")
@@ -88,12 +112,13 @@ class MainActivity : AppCompatActivity() {
                 val comment = commentEditText.text.toString()
                 val isRead = cbReading.isChecked
                 val rating = ratingBar.rating
+                val startDate = startDateEditText.text.toString()  // Datum začátku
 
                 // Najdeme ID vybrané kategorie
                 lifecycleScope.launch {
                     val category = database.categoryDao().getCategoryByName(selectedCategory)
                     if (category != null) {
-                        addBookToDatabase(title, author, category.id, comment, isRead, rating)
+                        addBookToDatabase(title, author, category.id, comment, isRead, rating, startDate)
                     }
                 }
             }
@@ -105,9 +130,9 @@ class MainActivity : AppCompatActivity() {
 
 
 
-    private fun addBookToDatabase(title: String, author: String, categoryId: Int, comment: String, isRead: Boolean, rating: Float) {
+    private fun addBookToDatabase(title: String, author: String, categoryId: Int, comment: String, isRead: Boolean, rating: Float, startDate: String) {
         lifecycleScope.launch {
-            val newBook = Book(title = title, author = author, categoryId = categoryId, comment = comment, isRead = isRead, rating = rating)
+            val newBook = Book(title = title, author = author, categoryId = categoryId, comment = comment, isRead = isRead, rating = rating, startDate = startDate)
             database.bookDao().insert(newBook)  // Vloží poznámku do databáze
             loadBooks()  // Aktualizuje seznam poznámek
         }
@@ -146,9 +171,9 @@ class MainActivity : AppCompatActivity() {
     private fun insertSampleBooks() {
         lifecycleScope.launch {
             val sampleBooks = listOf(
-                Book(title = "Kniha 1", author = "Obsah první testovací poznámky", comment = "Komentář jedna"),
-                Book(title = "Kniha 2", author = "Obsah druhé testovací poznámky", comment = "Komentář dva" ),
-                Book(title = "Kniha 3", author = "Obsah třetí testovací poznámky", comment = "Komentář tři")
+                Book(title = "Kniha 1", author = "Obsah první testovací poznámky", comment = "Komentář jedna", startDate = "/DD/MM/YYYY"),
+                Book(title = "Kniha 2", author = "Obsah druhé testovací poznámky", comment = "Komentář dva", startDate = "/DD/MM/YYYY" ),
+                Book(title = "Kniha 3", author = "Obsah třetí testovací poznámky", comment = "Komentář tři", startDate = "/DD/MM/YYYY")
             )
             sampleBooks.forEach { database.bookDao().insert(it) }
         }
@@ -194,6 +219,7 @@ class MainActivity : AppCompatActivity() {
         val commentEditText = dialogView.findViewById<EditText>(R.id.etComment)
         val cbReading = dialogView.findViewById<CheckBox>(R.id.cbReading) // Načteme checkbox
         val ratingBar = dialogView.findViewById<RatingBar>(R.id.ratingBar) // Přidáme RatingBar
+        val startDateEditText = dialogView.findViewById<EditText>(R.id.etStartDate) // EditText pro datum
 
         // Načtení kategorií z databáze a jejich zobrazení ve Spinneru
         lifecycleScope.launch {
@@ -219,6 +245,32 @@ class MainActivity : AppCompatActivity() {
         commentEditText.setText(book.comment)
         cbReading.isChecked = book.isRead // Nastavíme stav checkboxu
         ratingBar.rating = book.rating
+        startDateEditText.setText(book.startDate) // Předvyplnění startDate
+
+        startDateEditText.setOnClickListener {
+            val calendar = Calendar.getInstance()
+            val dateParts = book.startDate.split("/")
+
+            if (dateParts.size == 3) {
+                val day = dateParts[0].toInt()
+                val month = dateParts[1].toInt() - 1 // Month in Calendar is 0-based
+                val year = dateParts[2].toInt()
+                calendar.set(year, month, day)
+            }
+
+            val datePickerDialog = DatePickerDialog(
+                this,
+                { _, year, month, dayOfMonth ->
+                    val formattedDate = String.format("%02d/%02d/%d", dayOfMonth, month + 1, year)
+                    startDateEditText.setText(formattedDate)
+                },
+                calendar.get(Calendar.YEAR),
+                calendar.get(Calendar.MONTH),
+                calendar.get(Calendar.DAY_OF_MONTH)
+            )
+
+            datePickerDialog.show()
+        }
 
         val dialog = AlertDialog.Builder(this)
             .setTitle("Upravit knížku")
@@ -230,6 +282,7 @@ class MainActivity : AppCompatActivity() {
                 val updatedComment = commentEditText.text.toString()
                 val isRead = cbReading.isChecked
                 val updatedRating = ratingBar.rating // Načteme hodnocení
+                val updatedStartDate = startDateEditText.text.toString()
 
                 // Aktualizace poznámky v databázi
                 lifecycleScope.launch {
@@ -241,7 +294,8 @@ class MainActivity : AppCompatActivity() {
                             categoryId = category.id,  // Nastavíme ID vybrané kategorie
                             comment = updatedComment,
                             isRead = isRead, // Aktualizujeme stav
-                            rating = updatedRating // Uložíme nové hodnocení
+                            rating = updatedRating, // Uložíme nové hodnocení
+                            startDate = updatedStartDate
                         )
                         database.bookDao().update(updatedNote)  // Uloží aktualizovanou poznámku
                         loadBooks()  // Načte a aktualizuje seznam poznámek

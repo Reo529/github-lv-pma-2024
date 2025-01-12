@@ -12,5 +12,6 @@ data class Book (
     val comment: String,
     val categoryId: Int? = null,  // Volitelný odkaz na kategorii
     val isRead: Boolean = false,
-    val rating: Float = 0f
+    val rating: Float = 0f,
+    val startDate: String
 )

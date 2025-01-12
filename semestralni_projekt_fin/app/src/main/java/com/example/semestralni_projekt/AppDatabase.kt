@@ -7,7 +7,7 @@ import androidx.room.RoomDatabase
 
 @Database(
     entities = [Book::class, Category::class],
-    version = 4
+    version = 5
 )
 
 //@Database(
