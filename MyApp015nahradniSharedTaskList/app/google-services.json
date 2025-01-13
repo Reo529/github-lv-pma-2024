@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "531464209065",
+    "project_id": "sharedtasklistpodruhe",
+    "storage_bucket": "sharedtasklistpodruhe.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:531464209065:android:21c2f4abed99a23c369fb8",
+        "android_client_info": {
+          "package_name": "com.example.myapp015nahradnisharedtasklist"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDx-eKEFdEg6yhBs6-5QfkPg3EWkvqUvCQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
